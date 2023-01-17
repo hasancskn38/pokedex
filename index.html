@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="colors.css">
+</head>
+
+<body onload="loadPokedex();">
+
+    <!-- Search Bar Start -->
+    <header id="header">
+        <div class="search-bar-left">
+            <h1><a href="index.html">Pokedex</a></h1>
+        </div>
+        <div class="search-bar-right">
+            <input id="input" onkeyup="searchPokemon();" type="text" placeholder="search for a pokemon">
+        </div>
+    </header>
+    <!-- Search Bar End -->
+
+    <!-- Main Start -->
+
+    <div id="pokemon-cards"></div>
+    <div id="pokemon-cards-search"></div>
+    <div id="pokemon-cards-popup"></div>
+    <div id="overlay" onclick="closePopUp();" class="overlay d-none"></div>
+    </div>
+    <!-- Main End -->
+
+    <script src="script.js"></script>
+    <script src="template.js"></script>
+</body>
+
+</html>
