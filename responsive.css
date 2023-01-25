@@ -7,6 +7,10 @@
     #pokemon-cards {
         padding-top: 25px;
     }
+
+    .pokemon-card {
+        overflow: scroll;
+    }
     
     .popup-container {
         width: 100%;
@@ -21,6 +25,10 @@
     .popup-container button {
         top:3%;
     }
+
+    .popup-bottom {
+        bottom: 0;
+    }
     
     .stats-child {
         margin:30px;
@@ -34,6 +42,28 @@
 
 
 @media only screen and (max-width: 360px) {
+    #header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #input {
+        opacity: 0;
+        transition: opacity 225ms ease-in-out;
+        padding: 0;
+        margin: 0;
+        /* display: none; */
+    }
+
+    #input.visible {
+        opacity: 1;
+    }
+
+    #btn {
+        display: inline-block;
+    }
+
     #pokemon-cards {
         display: flex;
         flex-direction: column;

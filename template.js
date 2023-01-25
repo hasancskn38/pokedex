@@ -3,7 +3,7 @@ function generatePokemonCards(i, onePokemon) {
        <div id="pokemon-card-${i}" onclick="openPopUp(${i})" class="pokemon-card cursor">
        <div class="pokemon-card-top">
        <h2 class="pokemon-name" id="pokemon-name-${i}">${onePokemon['name']}</h2>
-       <h2 id="pokemon-id">#${i+1}</h2>
+       <h2 class="pokemon-id" id="pokemon-id">#${i+1}</h2>
        </div>
        <div id="pokemon-card-bottom" class="pokemon-card-bottom">
        <span class="pokemon-type" id="pokemon-type-${i}">${onePokemon['types']['0']['type']['name']}</span> <br>    
@@ -37,8 +37,8 @@ function generatePopUpHTML(i, onePokemon) {
         </div>
 
         <div class="next-image-container">
-        <h3><button onclick="prePokemon(${i});"><img class="left-arrow" src="img/left-arrow.png" alt=""></button></h3>
-        <h3><button onclick="nextPokemon(${i});"><img class="right-arrow" src="img/left-arrow.png" alt=""></button></h3>
+        <h3><button onclick="prePokemon(${i});"><img class="left-arrow cursor" src="img/left-arrow.png" alt=""></button></h3>
+        <h3><button onclick="nextPokemon(${i});"><img class="right-arrow cursor" src="img/left-arrow.png" alt=""></button></h3>
         </div>
 
         <div class="height-weight-container">
@@ -60,42 +60,44 @@ function generatePopUpHTML(i, onePokemon) {
         <!-- PopUp Bottom End -->
         <div class="stats-container">
             <div class="stats-left">
-                <p class="stats-name">HP</p>
-                <p class="stats-name">Attack</p>
-                <p class="stats-name">Defense</p>
-                <p class="stats-name">Special-Attack</p>
-                <p class="stats-name">Special-Defense</p>
-                <p class="stats-name">Speed</p>
+                <p class="stats-name"><b>HP</b></p>
+                <p class="stats-name"><b>Attack</b></p>
+                <p class="stats-name"><b>Defense</b></p>
+                <p class="stats-name"><b>Special-Attack</b></p>
+                <p class="stats-name"><b>Special-Defense</b></p>
+                <p class="stats-name"><b>Speed</b></p>
             </div>
 
             <div class="stats-center">
-                <p>${onePokemon['stats'][0]['base_stat']}</p>
-                <p>${onePokemon['stats'][1]['base_stat']}</p>
-                <p>${onePokemon['stats'][2]['base_stat']}</p>
-                <p>${onePokemon['stats'][3]['base_stat']}</p>
-                <p>${onePokemon['stats'][4]['base_stat']}</p>
-                <p>${onePokemon['stats'][5]['base_stat']}</p>
+                
+                <p><b>${onePokemon['stats'][0]['base_stat']}</b></p>
+                <p><b>${onePokemon['stats'][1]['base_stat']}</b></p>
+                <p><b>${onePokemon['stats'][2]['base_stat']}</b></p>
+                <p><b>${onePokemon['stats'][3]['base_stat']}</b></p>
+                <p><b>${onePokemon['stats'][4]['base_stat']}</b></p>
+                <p><b>${onePokemon['stats'][5]['base_stat']}</b></p>
+                  
             </div>
 
             <div class="stats-right">
         
                 <div class="progress-parent">
-                <progress value="${onePokemon['stats'][0]['base_stat']}" max="200"></progress>
+                <progress id="progressbar" value="${onePokemon['stats'][0]['base_stat']}" max="200"></progress>
                 </div>
                 <div class="progress-parent">
-                <progress value="${onePokemon['stats'][1]['base_stat']}" max="200"></progress>
+                <progress id="progressbar" value="${onePokemon['stats'][1]['base_stat']}" max="200"></progress>
                 </div>
                 <div class="progress-parent">
-                <progress value="${onePokemon['stats'][2]['base_stat']}" max="200"></progress>
+                <progress id="progressbar" value="${onePokemon['stats'][2]['base_stat']}" max="200"></progress>
                 </div>
                 <div class="progress-parent">
-                <progress value="${onePokemon['stats'][3]['base_stat']}" max="200"></progress>
+                <progress id="progressbar" value="${onePokemon['stats'][3]['base_stat']}" max="200"></progress>
                 </div>
                 <div class="progress-parent">
-                <progress value="${onePokemon['stats'][4]['base_stat']}" max="200"></progress>
+                <progress id="progressbar" value="${onePokemon['stats'][4]['base_stat']}" max="200"></progress>
                 </div>
                 <div class="progress-parent">
-                <progress value="${onePokemon['stats'][5]['base_stat']}" max="200"></progress>
+                <progress id="progressbar" value="${onePokemon['stats'][5]['base_stat']}" max="200"></progress>
                 </div>
 
             </div>

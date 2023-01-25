@@ -47,7 +47,7 @@ function searchPokemon() {
         if(pokemonName.toLowerCase().includes(input)) {
             cards.innerHTML += generatePokemonCards(i, allPokemons[i]);
             // Solved the changeColor Problem by adding the changeColor Function inside the for loop
-            changeColor(i);
+            changeColor(i); 
         } 
     }
 }

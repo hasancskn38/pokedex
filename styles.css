@@ -3,6 +3,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    scroll-behavior: smooth;
 }
 
 .overlay {
@@ -26,7 +27,6 @@ hr {
     display: none !important;
 }
 
-
 .cursor {
     cursor: pointer !important;
 }
@@ -38,7 +38,6 @@ hr {
 .hidden {
     overflow: hidden;
 }
-
 
 body {
     background-color: rgb(46, 46, 46);
@@ -71,6 +70,12 @@ input {
 
 input::placeholder {
     opacity: .5;
+}
+
+#btn {
+    height: 30px;
+    width: 30px;
+    display: none;
 }
 
 #pokemon-cards {
@@ -110,17 +115,14 @@ input::placeholder {
     justify-content: space-between;
 }
 
-.pokemon-card-top {
-    display: flex;
-    justify-content: space-between;
-}
 
-#pokemon-id {
-    opacity: .7 !important;
+.pokemon-id {
+    display: inline-block;
+    font-size: 22px;
+    margin-left: 20px !important;
     color: rgb(91, 91, 91);
-    font-size: 18px;
+    opacity: .7 !important;
 }
-
 
 .pokemon-name {
     margin-top: 10px;
@@ -154,7 +156,7 @@ input::placeholder {
 
 .popup-container {
     position: fixed;
-    top: 50px;
+    top: 25px;
     left: 0;
     right: 0;
     width: 550px;
@@ -162,7 +164,7 @@ input::placeholder {
     border-radius: 10px;
     z-index:999;
     margin: 0 auto 0 auto;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
 
 .popup-container button {
@@ -173,7 +175,6 @@ input::placeholder {
     border: none;
     left: 90%;
     top: 4%;
-    cursor: pointer;
     font-size: 25px;
 }
 
@@ -184,13 +185,6 @@ input::placeholder {
 
 .top-info h1 {
     margin-left: 20px;
-}
-
-.pokemon-id {
-    /* opacity: .7; */
-    color: rgb(91, 91, 91);
-    font-size: 22px;
-    margin-left: 20px !important;
 }
 
 .pokemon-type {
@@ -220,10 +214,19 @@ input::placeholder {
     width: 250px;
     position: relative;
     top: 40px;
+    transition: all 225ms ease-in-out;
+}
+
+.popup-top img:hover {
+    transform: scale(1.15);
 }
 
 .popup-bottom {
     border-radius: 10px;
+    position: relative;
+    bottom: 75px;
+    background-color: rgb(250, 246, 239);
+    padding: 20px 32px;
 }
 
 .height-weight-container {
@@ -242,7 +245,6 @@ input::placeholder {
 }
 
 .next-image-container img {
-    /* position: absolute; */
     height: 30px;
     width: 30px;
     opacity: .7;
@@ -260,7 +262,6 @@ input::placeholder {
     bc otherwise the two transform propertys wont work*/
     transform: rotate(180deg) scale(1.3);
 }
-
 
 .left-arrow {
     position: absolute !important;
@@ -281,11 +282,6 @@ input::placeholder {
     top: 1%;
     right: 10%;
     margin-right: 50px;
-}
-
-.popup-bottom {
-    background-color: rgb(250, 246, 239);
-    padding: 20px 32px;
 }
 
 .popup-bottom h3 {
